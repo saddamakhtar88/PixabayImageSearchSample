@@ -99,8 +99,8 @@
 			children = (
 				40E2EBC8244C78960046BABB /* AppDelegate.swift */,
 				40E2EBCA244C78960046BABB /* SceneDelegate.swift */,
-				40E2EC00244CC5070046BABB /* ViewModel */,
 				40E2EBFF244CC5000046BABB /* Model */,
+				40E2EC00244CC5070046BABB /* ViewModel */,
 				40E2EBFE244CC4DC0046BABB /* View */,
 				40E2EC04244CC6070046BABB /* Storyboard */,
 				40E2EC03244CC5E20046BABB /* Supporting */,

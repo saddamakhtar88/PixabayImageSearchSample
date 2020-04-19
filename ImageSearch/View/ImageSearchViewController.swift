@@ -32,8 +32,11 @@ class ImageSearchViewController: UIViewController {
     }
     
     func initialize() {
-        viewModel.onResultChange = { [weak self] (result) in
-            self?.collectionView.reloadData();
+        viewModel.onResultChange = { [weak self] (action, result) in
+            self?.collectionView.reloadData()
+            if action == .Search {
+                self?.collectionView.setContentOffset(CGPoint.zero, animated: true)
+            }
         }
         
         viewModel.onError = { (action, error) in
@@ -74,4 +77,10 @@ extension ImageSearchViewController: UICollectionViewDataSource {
 
 extension ImageSearchViewController: UICollectionViewDelegate {
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height;
+        if (bottomEdge >= scrollView.contentSize.height) {
+            viewModel.loadNextSetOfImages()
+        }
+    }
 }
