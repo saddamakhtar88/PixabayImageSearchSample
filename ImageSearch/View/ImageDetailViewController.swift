@@ -11,6 +11,7 @@ import UIKit
 class ImageDetailViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var commentsLikesLabel: UILabel!
     
     var image: ImageModel?
     
@@ -21,6 +22,8 @@ class ImageDetailViewController: UIViewController {
         guard let image = self.image else {
             return
         }
+        
         imageView.sd_setImage(with: URL(string: image.largeImageURL))
+        commentsLikesLabel.text = "Likes: \(image.likes)   Comments: \(image.comments)"
     }
 }
