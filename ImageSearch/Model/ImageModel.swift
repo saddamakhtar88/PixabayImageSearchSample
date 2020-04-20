@@ -27,6 +27,8 @@ class ImageModel: BaseModel {
         largeImageURL = dictionary?["largeImageURL"] as? String
         likes = dictionary?["likes"] as? UInt ?? 0
         comments = dictionary?["comments"] as? UInt ?? 0
+        previewImageWidth = dictionary?["previewWidth"] as? UInt ?? 0
+        previewImageHeight = dictionary?["previewHeight"] as? UInt ?? 0
     }
     
     var id: UInt!
@@ -34,4 +36,10 @@ class ImageModel: BaseModel {
     var largeImageURL: String!
     var likes: UInt = 0
     var comments: UInt = 0
+    var previewImageWidth: UInt = 0
+    var previewImageHeight: UInt = 0
+    
+    var previewImageHeightWidthRatio: Float {
+        Float(previewImageHeight) / Float(previewImageWidth)
+    }
 }

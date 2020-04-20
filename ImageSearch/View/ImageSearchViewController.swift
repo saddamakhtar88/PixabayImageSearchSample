@@ -32,6 +32,7 @@ class ImageSearchViewController: UIViewController {
     }
     
     func initialize() {
+        
         viewModel.onResultChange = { [weak self] (action, result) in
             self?.collectionView.reloadData()
             if action == .Search {
@@ -40,7 +41,7 @@ class ImageSearchViewController: UIViewController {
         }
         
         viewModel.onError = { (action, error) in
-            // Show error
+            // Handle error
         }
         
         let searchKeyword = "apple"
@@ -75,7 +76,21 @@ extension ImageSearchViewController: UICollectionViewDataSource {
     }
 }
 
-extension ImageSearchViewController: UICollectionViewDelegate {
+extension ImageSearchViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+           layout collectionViewLayout: UICollectionViewLayout,
+           sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let maxCellWidth: CGFloat = 200
+        var cellWidth = (collectionView.frame.width / 2)
+        cellWidth = cellWidth <= maxCellWidth ? cellWidth : maxCellWidth
+        
+        let imageModel = viewModel.images[indexPath.row]
+        let cellHeight = ImageCollectionCellViewModel.heightFor(image: imageModel, width: Float(cellWidth))
+        
+        return CGSize(width: CGFloat(cellWidth), height: CGFloat(cellHeight))
+    }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height;

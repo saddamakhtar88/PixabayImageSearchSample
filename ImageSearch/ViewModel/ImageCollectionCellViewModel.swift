@@ -19,4 +19,8 @@ class ImageCollectionCellViewModel {
         id = image.id
         imageURL = image.previewURL
     }
-}
+    
+    static func heightFor(image: ImageModel, width: Float) -> Float {
+        width * image.previewImageHeightWidthRatio
+    }
+ }
