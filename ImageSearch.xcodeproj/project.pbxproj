@@ -13,7 +13,6 @@
 		40E2EBD0244C78960046BABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40E2EBCE244C78960046BABB /* Main.storyboard */; };
 		40E2EBD2244C78970046BABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40E2EBD1244C78970046BABB /* Assets.xcassets */; };
 		40E2EBD5244C78970046BABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40E2EBD3244C78970046BABB /* LaunchScreen.storyboard */; };
-		40E2EBE0244C78970046BABB /* ImageSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EBDF244C78970046BABB /* ImageSearchTests.swift */; };
 		40E2EBEB244C85610046BABB /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EBEA244C85610046BABB /* ImageDetailViewController.swift */; };
 		40E2EBEF244C86C70046BABB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EBEE244C86C70046BABB /* ImageCollectionViewCell.swift */; };
 		40E2EBF1244C93050046BABB /* ImageSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EBF0244C93050046BABB /* ImageSearchViewModel.swift */; };
@@ -26,6 +25,8 @@
 		40E2EC07244D83F00046BABB /* DataServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EC06244D83F00046BABB /* DataServiceManager.swift */; };
 		40E2EC09244D84040046BABB /* ImageSearchDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EC08244D84040046BABB /* ImageSearchDataService.swift */; };
 		40E2EC0C244D843C0046BABB /* ImageSearchDataServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EC0B244D843C0046BABB /* ImageSearchDataServiceProvider.swift */; };
+		40E2EC0E244D98180046BABB /* ImageSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EC0D244D98180046BABB /* ImageSearchViewModelTests.swift */; };
+		40E2EC12244D99180046BABB /* ImageSearchDataServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EC11244D99180046BABB /* ImageSearchDataServiceMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,6 @@
 		40E2EBD4244C78970046BABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40E2EBD6244C78970046BABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40E2EBDB244C78970046BABB /* ImageSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		40E2EBDF244C78970046BABB /* ImageSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchTests.swift; sourceTree = "<group>"; };
 		40E2EBE1244C78970046BABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40E2EBEA244C85610046BABB /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		40E2EBEE244C86C70046BABB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -60,6 +60,8 @@
 		40E2EC06244D83F00046BABB /* DataServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceManager.swift; sourceTree = "<group>"; };
 		40E2EC08244D84040046BABB /* ImageSearchDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchDataService.swift; sourceTree = "<group>"; };
 		40E2EC0B244D843C0046BABB /* ImageSearchDataServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchDataServiceProvider.swift; sourceTree = "<group>"; };
+		40E2EC0D244D98180046BABB /* ImageSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewModelTests.swift; sourceTree = "<group>"; };
+		40E2EC11244D99180046BABB /* ImageSearchDataServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchDataServiceMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +122,7 @@
 		40E2EBDE244C78970046BABB /* ImageSearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				40E2EBDF244C78970046BABB /* ImageSearchTests.swift */,
+				40E2EC0D244D98180046BABB /* ImageSearchViewModelTests.swift */,
 				40E2EBE1244C78970046BABB /* Info.plist */,
 			);
 			path = ImageSearchTests;
@@ -177,6 +179,7 @@
 				40E2EC06244D83F00046BABB /* DataServiceManager.swift */,
 				40E2EC08244D84040046BABB /* ImageSearchDataService.swift */,
 				40E2EC0A244D840D0046BABB /* Provider */,
+				40E2EC10244D98C40046BABB /* MockProvider */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -187,6 +190,14 @@
 				40E2EC0B244D843C0046BABB /* ImageSearchDataServiceProvider.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		40E2EC10244D98C40046BABB /* MockProvider */ = {
+			isa = PBXGroup;
+			children = (
+				40E2EC11244D99180046BABB /* ImageSearchDataServiceMock.swift */,
+			);
+			path = MockProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +321,7 @@
 				40E2EBEB244C85610046BABB /* ImageDetailViewController.swift in Sources */,
 				40E2EC09244D84040046BABB /* ImageSearchDataService.swift in Sources */,
 				40E2EC02244CC5800046BABB /* ImageCollectionCellViewModel.swift in Sources */,
+				40E2EC12244D99180046BABB /* ImageSearchDataServiceMock.swift in Sources */,
 				40E2EBF3244C93B90046BABB /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,7 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40E2EBE0244C78970046BABB /* ImageSearchTests.swift in Sources */,
+				40E2EC0E244D98180046BABB /* ImageSearchViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
