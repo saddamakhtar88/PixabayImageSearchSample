@@ -11,8 +11,10 @@ import SDWebImage
 
 class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var tagsLabel: UILabel!
     
     func configureWithData(data: ImageCollectionCellViewModel) {
         imageView.sd_setImage(with: URL(string: data.imageURL))
+        tagsLabel.text = data.tags
     }
 }

@@ -9,15 +9,15 @@
 class ImageCollectionCellViewModel {
     var id: UInt
     var imageURL: String
-    
-    init(id: UInt, imageURL: String) {
-        self.id = id
-        self.imageURL = imageURL
-    }
+    var tags: String
     
     init(image: ImageModel) {
         id = image.id
         imageURL = image.previewURL
+        
+        let maxtags: Int = 3
+        let tagsCount = image.tags.count < maxtags ? image.tags.count : maxtags
+        tags = image.tags[..<tagsCount].reduce("", { $0 == "" ? $1 : "\($0), \($1)" })
     }
     
     static func heightFor(image: ImageModel, width: Float) -> Float {

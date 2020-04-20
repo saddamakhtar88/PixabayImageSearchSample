@@ -27,9 +27,12 @@ class ImageModel: BaseModel {
         largeImageURL = dictionary?["largeImageURL"] as? String
         likes = dictionary?["likes"] as? UInt ?? 0
         comments = dictionary?["comments"] as? UInt ?? 0
+        prTags = dictionary?["tags"] as? String
         previewImageWidth = dictionary?["previewWidth"] as? UInt ?? 0
         previewImageHeight = dictionary?["previewHeight"] as? UInt ?? 0
     }
+    
+    private var prTags: String!
     
     var id: UInt!
     var previewURL: String!
@@ -39,6 +42,10 @@ class ImageModel: BaseModel {
     var previewImageWidth: UInt = 0
     var previewImageHeight: UInt = 0
     
+    var tags: [String] {
+        prTags.components(separatedBy: ",").map {$0.trimmingCharacters(in: CharacterSet.whitespaces)}
+    }
+
     var previewImageHeightWidthRatio: Float {
         Float(previewImageHeight) / Float(previewImageWidth)
     }
