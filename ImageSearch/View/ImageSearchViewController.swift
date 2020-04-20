@@ -13,7 +13,7 @@ class ImageSearchViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    let viewModel: ImageSearchViewModel = ImageSearchViewModel();
+    let viewModel: ImageSearchViewModel = ImageSearchViewModel(imageSearchDataService: DataServiceManager.shared.imageSearchDataService)
     
     override func viewDidLoad() {
         super.viewDidLoad()

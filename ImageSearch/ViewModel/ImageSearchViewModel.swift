@@ -18,6 +18,7 @@ class ImageSearchViewModel {
     
     private var searchImages: ImageSearchResultModel = ImageSearchResultModel()
     
+    private let imageSearchDataService: ImageSearchDataService
     private var isLoading: Bool = false
     private var pageSize: UInt
     private var currentPageNumber: UInt = 1
@@ -42,7 +43,8 @@ class ImageSearchViewModel {
         return searchImages.totalHits > images.count
     }
     
-    init(pageSize: UInt = 20) {
+    init(imageSearchDataService: ImageSearchDataService, pageSize: UInt = 20) {
+        self.imageSearchDataService = imageSearchDataService
         self.pageSize = pageSize
     }
     
@@ -56,30 +58,22 @@ class ImageSearchViewModel {
     
     private func searchImages(searchKeyword: String, pageNumber: UInt) {
         isLoading = true
-        let request = AF.request("https://pixabay.com/api/?key=16120917-04ddc3c9cab1de757baaed6e4&q=\(searchKeyword)&per_page=\(pageSize)&page=\(pageNumber)")
-        request.responseData { [weak self] (response) in
-
+        
+        imageSearchDataService.searchImage(searchKeyword: searchKeyword, pageNumber: pageNumber, pageSize: pageSize) { [weak self] (searchResult, error) in
+            
             guard let weakSelf = self else { return }
             let actionType = pageNumber > 1 ? Action.Pagination : Action.Search
-            switch response.result {
-            case .success:
-                guard let result = response.value else {
-                    weakSelf.onError?(actionType, nil)
-                    return
-                }
+            
+            if searchResult != nil && error == nil {
                 if actionType == .Pagination {
-                    guard let newPageImages = ImageSearchResultModel.instanceFromData(result) as? ImageSearchResultModel else {
-                        weakSelf.onError?(actionType, nil)
-                        return
-                    }
-                    weakSelf.searchImages.images = weakSelf.searchImages.images + newPageImages.images
+                    weakSelf.searchImages.images = weakSelf.searchImages.images + searchResult!.images
                     weakSelf.currentPageNumber = pageNumber
                 } else {
-                    weakSelf.searchImages = ImageSearchResultModel.instanceFromData(result) as? ImageSearchResultModel ?? weakSelf.searchImages
+                    weakSelf.searchImages = searchResult!
                 }
                 weakSelf.onResultChange?(actionType, weakSelf.searchImages)
-            case let .failure(error):
-                weakSelf.onError?(pageNumber > 1 ? Action.Pagination : Action.Search, error)
+            } else {
+                weakSelf.onError?(actionType, error)
             }
             
             weakSelf.isLoading = false
