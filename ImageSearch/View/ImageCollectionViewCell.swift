@@ -9,10 +9,10 @@
 import UIKit
 import SDWebImage
 
-class ImageSearchResultCollectionViewCell: UICollectionViewCell {
+class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     
-    func configureWithData(data: ImageSearchResultViewModel) {
+    func configureWithData(data: ImageCollectionCellViewModel) {
         imageView.sd_setImage(with: URL(string: data.imageURL))
     }
 }

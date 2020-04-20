@@ -6,7 +6,7 @@
 //  Copyright © 2020 personal. All rights reserved.
 //
 
-class ImageSearchResultViewModel {
+class ImageCollectionCellViewModel {
     var id: UInt
     var imageURL: String
     

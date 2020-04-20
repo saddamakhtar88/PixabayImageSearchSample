@@ -66,9 +66,9 @@ extension ImageSearchViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let imageSearchCell = collectionView.dequeueReusableCell(withReuseIdentifier: "searchresultcell", for: indexPath) as! ImageSearchResultCollectionViewCell
+        let imageSearchCell = collectionView.dequeueReusableCell(withReuseIdentifier: "searchresultcell", for: indexPath) as! ImageCollectionViewCell
         
-        let imageViewModel = ImageSearchResultViewModel(image: viewModel.images[indexPath.row])
+        let imageViewModel = ImageCollectionCellViewModel(image: viewModel.images[indexPath.row])
         imageSearchCell.configureWithData(data: imageViewModel)
         
         return imageSearchCell

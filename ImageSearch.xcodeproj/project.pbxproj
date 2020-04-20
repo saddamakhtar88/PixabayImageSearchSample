@@ -15,14 +15,14 @@
 		40E2EBD5244C78970046BABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40E2EBD3244C78970046BABB /* LaunchScreen.storyboard */; };
 		40E2EBE0244C78970046BABB /* ImageSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EBDF244C78970046BABB /* ImageSearchTests.swift */; };
 		40E2EBEB244C85610046BABB /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EBEA244C85610046BABB /* ImageDetailViewController.swift */; };
-		40E2EBEF244C86C70046BABB /* ImageSearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EBEE244C86C70046BABB /* ImageSearchResultCollectionViewCell.swift */; };
+		40E2EBEF244C86C70046BABB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EBEE244C86C70046BABB /* ImageCollectionViewCell.swift */; };
 		40E2EBF1244C93050046BABB /* ImageSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EBF0244C93050046BABB /* ImageSearchViewModel.swift */; };
 		40E2EBF3244C93B90046BABB /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EBF2244C93B90046BABB /* ImageModel.swift */; };
 		40E2EBF5244C96BC0046BABB /* ImageSearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EBF4244C96BC0046BABB /* ImageSearchResultModel.swift */; };
 		40E2EBF8244CA71E0046BABB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 40E2EBF7244CA71E0046BABB /* Alamofire */; };
 		40E2EBFB244CA77C0046BABB /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 40E2EBFA244CA77C0046BABB /* SDWebImage */; };
 		40E2EBFD244CB7ED0046BABB /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EBFC244CB7ED0046BABB /* BaseModel.swift */; };
-		40E2EC02244CC5800046BABB /* ImageSearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EC01244CC5800046BABB /* ImageSearchResultViewModel.swift */; };
+		40E2EC02244CC5800046BABB /* ImageCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EC01244CC5800046BABB /* ImageCollectionCellViewModel.swift */; };
 		40E2EC07244D83F00046BABB /* DataServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EC06244D83F00046BABB /* DataServiceManager.swift */; };
 		40E2EC09244D84040046BABB /* ImageSearchDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EC08244D84040046BABB /* ImageSearchDataService.swift */; };
 		40E2EC0C244D843C0046BABB /* ImageSearchDataServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E2EC0B244D843C0046BABB /* ImageSearchDataServiceProvider.swift */; };
@@ -51,12 +51,12 @@
 		40E2EBDF244C78970046BABB /* ImageSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchTests.swift; sourceTree = "<group>"; };
 		40E2EBE1244C78970046BABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40E2EBEA244C85610046BABB /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
-		40E2EBEE244C86C70046BABB /* ImageSearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		40E2EBEE244C86C70046BABB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		40E2EBF0244C93050046BABB /* ImageSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewModel.swift; sourceTree = "<group>"; };
 		40E2EBF2244C93B90046BABB /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		40E2EBF4244C96BC0046BABB /* ImageSearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchResultModel.swift; sourceTree = "<group>"; };
 		40E2EBFC244CB7ED0046BABB /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		40E2EC01244CC5800046BABB /* ImageSearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchResultViewModel.swift; sourceTree = "<group>"; };
+		40E2EC01244CC5800046BABB /* ImageCollectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCellViewModel.swift; sourceTree = "<group>"; };
 		40E2EC06244D83F00046BABB /* DataServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceManager.swift; sourceTree = "<group>"; };
 		40E2EC08244D84040046BABB /* ImageSearchDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchDataService.swift; sourceTree = "<group>"; };
 		40E2EC0B244D843C0046BABB /* ImageSearchDataServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchDataServiceProvider.swift; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 			children = (
 				40E2EBCC244C78960046BABB /* ImageSearchViewController.swift */,
 				40E2EBEA244C85610046BABB /* ImageDetailViewController.swift */,
-				40E2EBEE244C86C70046BABB /* ImageSearchResultCollectionViewCell.swift */,
+				40E2EBEE244C86C70046BABB /* ImageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				40E2EBF0244C93050046BABB /* ImageSearchViewModel.swift */,
-				40E2EC01244CC5800046BABB /* ImageSearchResultViewModel.swift */,
+				40E2EC01244CC5800046BABB /* ImageCollectionCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -304,12 +304,12 @@
 				40E2EBCD244C78960046BABB /* ImageSearchViewController.swift in Sources */,
 				40E2EC0C244D843C0046BABB /* ImageSearchDataServiceProvider.swift in Sources */,
 				40E2EC07244D83F00046BABB /* DataServiceManager.swift in Sources */,
-				40E2EBEF244C86C70046BABB /* ImageSearchResultCollectionViewCell.swift in Sources */,
+				40E2EBEF244C86C70046BABB /* ImageCollectionViewCell.swift in Sources */,
 				40E2EBC9244C78960046BABB /* AppDelegate.swift in Sources */,
 				40E2EBCB244C78960046BABB /* SceneDelegate.swift in Sources */,
 				40E2EBEB244C85610046BABB /* ImageDetailViewController.swift in Sources */,
 				40E2EC09244D84040046BABB /* ImageSearchDataService.swift in Sources */,
-				40E2EC02244CC5800046BABB /* ImageSearchResultViewModel.swift in Sources */,
+				40E2EC02244CC5800046BABB /* ImageCollectionCellViewModel.swift in Sources */,
 				40E2EBF3244C93B90046BABB /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
