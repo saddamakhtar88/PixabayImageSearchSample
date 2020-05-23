@@ -23,7 +23,7 @@ jobs:
       run: xcodebuild clean
       
     - name: Compile
-      run: xcodebuild build -project ImageSearch.xcodeproj -scheme ImageSearch -sdk iphonesimulator
+      run: xcodebuild build -project ImageSearch.xcodeproj
 
   Test:
     needs: build
